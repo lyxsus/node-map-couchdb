@@ -1,0 +1,19 @@
+{
+	"name": "couchdb-fs-mapper",
+	"author": {
+		"name": "Sergey Antoninko",
+		"email": "lyxsus@gmail.com"
+	},
+
+	"dependencies": {
+		"buffered-writer": "*",
+		"lodash": "*",
+		"vow": "*",
+		"cradle": "*",
+		"mime": "*",
+		"watch": "*"
+	},
+	"main": "index.js",
+	"version": "0.0.1",
+	"readme": "hello there"
+}
