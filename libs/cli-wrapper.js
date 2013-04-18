@@ -10,10 +10,3 @@ mapper.pull ()
 	.then (function () {
 		mapper.watch ();
 	});
-
-
-// mapper.pull ()
-//	.fail (console.log);
-
-// mapper.push ()
-//	.fail (console.log);
