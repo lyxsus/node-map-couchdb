@@ -1,8 +1,14 @@
 {
-	"name": "couchdb-fs-mapper",
+	"name": "map-couchdb",
+
 	"author": {
 		"name": "Sergey Antoninko",
 		"email": "lyxsus@gmail.com"
+	},
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lyxsus/node-map-couchdb"
 	},
 
 	"dependencies": {
@@ -13,7 +19,14 @@
 		"mime": "*",
 		"watch": "*"
 	},
-	"main": "index.js",
+
+	"main": "libs/mapper.js",
+
+	"bin": {
+		"map-couchdb": "lib/cli-wrapper.js"
+	},
+
 	"version": "0.0.1",
+
 	"readme": "hello there"
 }
