@@ -1,1 +1,0 @@
-./bin/map-couch http://lyxsus:letmein@89.179.119.16:5984/app%2Ffuturios-packages ./example
