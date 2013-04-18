@@ -20,7 +20,7 @@
 		"watch": "*"
 	},
 
-	"main": "libs/mapper.js",
+	"main": "lib/mapper.js",
 
 	"bin": {
 		"map-couchdb": "lib/cli-wrapper.js"
