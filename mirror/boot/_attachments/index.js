@@ -6,7 +6,7 @@ define (
 		'./config.js'
 	],
 	function (Promises, _, http, https, express, connectUtils, gzippo, SocketIO, Pool, futurios, config) {
-
+/* 3 */
 		function startServer (pool) {
 			var fosSocketIO = new SocketIO (pool, config.sessions),
 				app = createApp (pool);
