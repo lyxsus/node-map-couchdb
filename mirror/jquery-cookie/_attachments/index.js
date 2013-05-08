@@ -1,5 +1,4 @@
-define([ 'jquery' ], function( jQuery ) {
-
+define([ 'fos!jquery' ], function( jQuery ) {
 /*!
  * jQuery Cookie Plugin v1.3
  * https://github.com/carhartl/jquery-cookie

@@ -94,11 +94,15 @@ define (
 							};
 
 						if (search.limit) {
-							resolved.limit = search.limit;
+							resolved.limit = parseInt (search.limit) || 0;
+						} else {
+							resolved.limit = 10;	// TODO: Move global config
 						}
 
 						if (search.skip) {
-							resolved.skip = search.skip;
+							resolved.skip = parseInt (search.skip);
+						} else {
+							resolved.skip = 0;
 						}
 
 						if (search.descending) {
@@ -118,6 +122,14 @@ define (
 						}
 
 						resolved.options = search;
+
+						if (resolved.limit) {
+							resolved.options.limit = resolved.limit;
+						}
+
+						if (resolved.skip) {
+							resolved.options.skip = resolved.skip;
+						}
 
 						if (resolved ['no-models']) {
 							resolved.options ['no-models'] = resolved ['no-models'];

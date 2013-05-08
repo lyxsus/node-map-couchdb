@@ -1204,9 +1204,10 @@
         // for Closure Compiler "advanced" mode
         this['moment'] = moment;
     }
+
     /*global define:false */
     if (typeof define === "function" && define.amd) {
-        define("moment", [], function () {
+        define(function () {
             return moment;
         });
     }

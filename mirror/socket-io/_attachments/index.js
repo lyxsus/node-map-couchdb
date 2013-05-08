@@ -3818,7 +3818,7 @@ var swfobject=function(){var D="undefined",r="object",S="Shockwave Flash",W="Sho
 
 
   if (typeof define === 'function' && define.amd) {
-    define('socket.io', [], function() {
+    define(function() {
       return io;
     });
   }

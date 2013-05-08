@@ -92,6 +92,7 @@ define (['node!lodash', 'node!vow'], function (_, Promises) {
 			}
 		},
 
+		// TODO: Optimize this function
 		sync: function (data) {
 			var states = data.states,
 				resources = this.resources,
@@ -100,18 +101,20 @@ define (['node!lodash', 'node!vow'], function (_, Promises) {
 			// Sync all resources for each given state
 			_.each (states, function (rev, id) {
 				if (resources.has (id)) {
-					if (parseRev (resources.get (id).get ('_rev')) > parseRev (rev)) {
-						return;
-					}
+					return;
 				}
 				
 				Promises.when (resources.get (id))
-					.then (self.prepare)
-					.then (function (data) {
-						if (parseRev (data._rev) > parseRev (rev)) {
-							self.send ({
-								payload: data
-							});
+					.then (function (resource) {
+						var error = resource.getSource ().error;
+						
+						if (error) {
+							return Promises.reject (error);
+						} else if (parseRev (resource.get ('_rev')) > parseRev (rev)) {
+							return self.prepare (resource)
+								.then (function (data) {
+									return self.send ({payload: data});
+								});
 						}
 					})
 					.fail (function (error) {

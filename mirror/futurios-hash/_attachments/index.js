@@ -5,7 +5,7 @@
 // 		return hasher.digest ();
 // 	};
 // });
-define (function () { /* hello world ??? */
+define (function () {
 	return function (str) {
 		return str;
 	};

@@ -1,4 +1,4 @@
-define (['node!lodash', 'node!jstoxml'], function (lodash, jstoxml) {
+define (['node!lodash', 'node!jstoxml'], function (_, jstoxml) {
 	function EngineXML (resource, client) {
 		this.resource = resource;
 		this.client = client;
