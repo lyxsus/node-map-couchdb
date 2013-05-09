@@ -33,6 +33,6 @@ define ({
 	},
 
 	http: {
-		port: 5553
+		port: 80
 	}
 });

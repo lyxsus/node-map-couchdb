@@ -150,8 +150,14 @@ define (['fos!lodash', 'fos!promises', 'fos!boot/browser/connection.js', 'fos!bo
 						result [i] = prefetched [i].toJSON ();
 					} else {
 						var val = [];
-						for (var j = 0; j < prefetched [i].length; j++) {
-							val.push (prefetched [i] [j].toJSON ());
+						for (var j = 0, resource; j < prefetched [i].length; j++) {
+							if (!prefetched [i]) continue;
+							
+							resource = prefetched [i] [j];
+
+							if (resource && resource.toJSON) {
+								val.push (resource.toJSON ());
+							}
 						}
 
 						result [i] = val;
@@ -167,7 +173,7 @@ define (['fos!lodash', 'fos!promises', 'fos!boot/browser/connection.js', 'fos!bo
 					_prefetch: expandJSON (this._prefetch)
 				}, this.attributes);
 			} catch (e) {
-				console.error (e.message, e.stack);
+				console.error ('Failed to expand', this.id, e.message, e.stack);
 				throw e;
 			}
 			
