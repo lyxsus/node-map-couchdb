@@ -1,4 +1,7 @@
-define (['node!lodash', './daemon', './http_request'], function (_, Daemon, request) {
+define ([
+	'node!lodash', './daemon', './http_request',
+	'node!nodemailer', 'node!less'
+], function (_, Daemon, http_request) {
 	function Daemons (config) {
 		this.config = config;
 
