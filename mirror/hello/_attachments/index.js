@@ -1,3 +1,3 @@
 define (function () {
-	return 'hello 2';
+	return 'hello 3';
 });

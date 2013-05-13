@@ -10,12 +10,14 @@ define (['storage', 'fos!promises'], function (storage, Promises) {
 			  host = tmp [0];
 		  }
 
+		  
 		var getBridge = function (host) {
 		  var promise = Promises.promise ();
 		  
 		  storage.get ('urn:fos:sync:bridge?limit=1&base-uri=' + e (host))
 			.ready (function (bridges) {
 			  var models = bridges.models ();
+
 			  if (models.length) {
 				promise.fulfill (models [0]);
 			  } else {
