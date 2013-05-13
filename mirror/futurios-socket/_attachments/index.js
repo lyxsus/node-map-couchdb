@@ -48,7 +48,7 @@ define (
 							if (error) {
 								accept (error);
 							} else {
-								if (result.passport && result.passport.user) {
+								if (result && result.passport && result.passport.user) {
 									handshakeData.user = result.passport.user;
 								}
 								accept (null, true);

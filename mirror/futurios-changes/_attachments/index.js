@@ -1,7 +1,7 @@
 define (['node!fs', 'node!http'], function (fs, http) {
 	var PWD = process.env.PWD,
 		stdo = fs.createWriteStream (PWD + '/changes.log'),
-		port = process.argv [2] ? parseInt (process.argv [2]) : 5983;
+		port = 5983;
 
 	process.stdout.write = (function (write) {
 		return function (string, encoding, fd) {

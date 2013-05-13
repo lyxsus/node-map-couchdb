@@ -1,4 +1,4 @@
-define (['node!os', 'node!lodash', 'node!vow', './logger'], function (os, _, Promises, Logger) {
+define (['node!os', 'node!lodash', 'node!vow', './logger', 'node!q', './evaluate'], function (os, _, Promises, Logger, Q) {
 	var e = encodeURIComponent;
 
 	function Daemon (daemons, source) {

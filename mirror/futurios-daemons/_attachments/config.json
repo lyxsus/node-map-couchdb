@@ -1,6 +1,6 @@
 define ({
 	"couchdb": {
-		"host": "192.168.1.42",
+		"host": "127.0.0.1",
 		"port": 5984,
 		"auth": {
 			"oauth": {
@@ -14,7 +14,7 @@ define ({
 	},
 
 	"db_updates": {
-		"host": "192.168.1.42",
+		"host": "127.0.0.1",
 		"port": 5983
 	}
 });
