@@ -28,6 +28,26 @@ define (['fos!doT', 'fos!promises', 'fos!boot/browser/libs/mixin.js', 'fos!boot/
 		return result;
 	}
 
+	function nodeNS ($node) {
+		var ns = $node.attr ('xmlns'),
+			attrs;
+
+		if (ns) {
+			attrs = {};
+
+			$.each ($node.prop ('attributes'), function () {
+				if (this.specified && this.name != 'xmlns') {
+					attrs [this.name] = this.value;
+				}
+			});
+
+			return $ (document.createElementNS (ns, $node.prop ('tagName').toLowerCase ()))
+				.attr (attrs);
+		} else {
+			return $node;
+		}
+	}
+
 	function View (views, id, resource, role, use) {
 		this.id = id;
 
@@ -280,7 +300,7 @@ define (['fos!doT', 'fos!promises', 'fos!boot/browser/libs/mixin.js', 'fos!boot/
 			}
 
 			try {
-				var $rendered = $ (rendered);
+				var $rendered = nodeNS ($ (rendered));
 
 				if ($rendered.size () == 1) {
 					this.frag = $rendered;
