@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!node
 
 var connstr = process.argv [2],
 	folder = process.argv [3];
